@@ -1,5 +1,5 @@
 {
-  "name": "bmqb-sms",
+  "name": "bm-sms",
   "version": "0.2.2",
   "description": "BMQB SMS package",
   "main": "index.js",
@@ -7,23 +7,23 @@
     "ava": "NODE_ENV=test node --harmony --harmony-proxies ./node_modules/.bin/ava --verbose",
     "test": "./node_modules/.bin/nyc -a --reporter=lcov --reporter=text --reporter=html npm run ava",
     "lint": "eslint src",
-    "build": "babel src --out-dir lib",
+    "build": "rm -rf ./lib && babel src --out-dir lib",
     "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bmqb/bmqb-sms.git"
+    "url": "git+https://github.com/bmqb/bm-sms.git"
   },
   "keywords": [
     "bmqb",
-    "bmqb-sms"
+    "bm-sms"
   ],
   "author": "harveyz@bmqb.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bmqb/bmqb-sms/issues"
+    "url": "https://github.com/bmqb/bm-sms/issues"
   },
-  "homepage": "https://github.com/bmqb/bmqb-sms#readme",
+  "homepage": "https://github.com/bmqb/bm-sms#readme",
   "devDependencies": {
     "ava": "^0.16.0",
     "babel": "^6.5.2",
