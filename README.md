@@ -4,7 +4,7 @@
 
 ## 安装：
 ```SHELL
-npm install bm-sms
+npm install bm-sms --save
 ```
 
 ## 使用方式：
