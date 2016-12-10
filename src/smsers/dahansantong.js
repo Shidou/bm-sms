@@ -54,6 +54,33 @@ export default class Dahansantong extends SmserAbstract {
     return con;
   }
 
+  // 发送语音验证码
+  sendVoiceVcode(mobile, code) {
+    if (!code || !mobile) {
+      throw new InvalidArgumentException('Please specify params: mobile and msg!');
+    }
+
+    if (!('playmode' in this.config) || !this.config.playmode) {
+      // 只播放文本
+      this.config.playmode = 0;
+    }
+
+    if (!('calltype' in this.config) || !this.config.calltype) {
+      // 验证码呼叫
+      this.config.calltype = 1;
+    }
+
+    const msgid = Dahansantong.getMsgid();
+    return this.send('/json/voiceSms/SubmitVoc', {
+      callee: mobile,
+      text: code,
+      playmode: this.config.playmode,
+      calltype: this.config.calltype,
+      msgid,
+    });
+  }
+
+  // 发送验证码
   sendVcode(mobile, msg) {
     return this.sendSms(mobile, msg);
   }
@@ -78,6 +105,7 @@ export default class Dahansantong extends SmserAbstract {
     }).then(res => Dahansantong.getSmsResponse(res, msgid));
   }
 
+  // 群发
   sendPkg(pkg) {
     if (!_.isArray(pkg) || !pkg.length) {
       throw new InvalidArgumentException('Invalid format: pkg!');
