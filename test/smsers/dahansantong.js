@@ -59,4 +59,5 @@ test('Dahansantong sendVoiceVcode', t => {
   const smser = new Dahansantong(demoConfig, requestSpy);
   const mobile = '11111111111';
   const vcode = '【测试】123456';
+  smser.sendVoiceVcode(mobile,vcode)
 });
