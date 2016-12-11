@@ -74,7 +74,7 @@ export default class Dahansantong extends SmserAbstract {
       playmode: this.config.playmode,
       calltype: this.config.calltype,
       msgid,
-    });
+    }).then(res => Dahansantong.getSmsResponse(res, msgid));
   }
 
   // 发送验证码
