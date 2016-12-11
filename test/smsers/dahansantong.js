@@ -43,3 +43,21 @@ test('smser dahansantong', async t => {
 test('Dahansantong getMsgid', t => {
   t.is(Dahansantong.getMsgid().length, 32);
 });
+
+test('Dahansantong sendVoiceVcode', t => {
+  const rp = () => {
+    return Promise.resolve(null);
+  };
+  const requestSpy = sinon.spy(rp);
+  const demoConfig = {
+    domain: 'http://127.0.0.1',
+    account: 'xxxxx',
+    password: 'xxxxx',
+    subcode: null,
+    sign: '【测试】',
+  };
+  const smser = new Dahansantong(demoConfig, requestSpy);
+  const mobile = '11111111111';
+  const vcode = '【测试】123456';
+  smser.sendVoiceVcode(mobile,vcode)
+});
