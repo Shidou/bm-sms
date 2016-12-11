@@ -60,12 +60,10 @@ export default class Dahansantong extends SmserAbstract {
       throw new InvalidArgumentException('Please specify params: mobile and msg!');
     }
     if (!('playmode' in this.config) || !this.config.playmode) {
-      // 只播放文本
-      this.config.playmode = 0;
+      this.config.playmode = 0;// 只播放文本
     }
     if (!('calltype' in this.config) || !this.config.calltype) {
-      // 验证码呼叫
-      this.config.calltype = 1;
+      this.config.calltype = 1;// 验证码呼叫
     }
     const msgid = Dahansantong.getMsgid();
     return this.send('/json/voiceSms/SubmitVoc', {
