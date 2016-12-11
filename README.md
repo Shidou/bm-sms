@@ -46,7 +46,7 @@ sms.sendVcode('13871451762', '你的验证码是...').then(res => {
 ####3. API：所有API均以Promise对象作为返回结果。
 * sendVcode(mobile, msg): 发送短信验证码
 * sendSms(mobile, msg): 单条短信发送
-* sendVoiceVcode(mobile, code): 发送语音验证码，**目前仅支持云通信**
+* sendVoiceVcode(mobile, code): 发送语音验证码，**支持云通信和大汉三通**
 * sendPkg(pkg): 群发，`强制限定每次发送条数不得超过 1000 条，请注意分片发送`。格式为:
 ```JSON
 [
