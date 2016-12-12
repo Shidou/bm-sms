@@ -66,12 +66,15 @@ export default class Dahansantong extends SmserAbstract {
       this.config.calltype = 1;// 验证码呼叫
     }
     const msgid = Dahansantong.getMsgid();
-    return this.send('/json/voiceSms/SubmitVoc', {
+    const sendData = [{
       callee: mobile,
       text: code,
       playmode: this.config.playmode,
       calltype: this.config.calltype,
       msgid,
+    }];
+    return this.send('/json/voiceSms/SubmitVoc', {
+      data: sendData,
     }).then(res => Dahansantong.getSmsResponse(res, msgid));
   }
 
