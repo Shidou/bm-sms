@@ -9,6 +9,7 @@ import { InvalidArgumentException } from '../exceptions';
 const PKG_MAX_LEN = 500;
 const STATUS_CODE = {
   success: 0,
+  code: 'DH:0000',
 };
 
 export default class Dahansantong extends SmserAbstract {
@@ -24,6 +25,8 @@ export default class Dahansantong extends SmserAbstract {
     let status = 'failed';
     if (res && res.msgid && res.result) {
       status = parseInt(res.result, 10) === STATUS_CODE.success ? 'success' : status;
+    } else if (res && res.result) {
+      status = res.result === STATUS_CODE.code ? 'success' : status;
     }
     return new SmsResponse({
       ssid: msgid,

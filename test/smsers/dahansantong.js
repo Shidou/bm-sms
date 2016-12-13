@@ -61,3 +61,9 @@ test('Dahansantong sendVoiceVcode', t => {
   const vcode = '【测试】123456';
   smser.sendVoiceVcode(mobile,vcode)
 });
+
+test('Dahansantong getSmsResponse', t => {
+  const status1 = Dahansantong.getSmsResponse({result: 'DH:0000'},'sfs');
+  const status2 = Dahansantong.getSmsResponse({result: '0',msgid: 'dsdf'},'sfs');
+  t.true(status1.status === status2.status);
+});
