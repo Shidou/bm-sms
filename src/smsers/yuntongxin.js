@@ -17,6 +17,10 @@ export default class Yuntongxin extends SmserAbstract {
     this.request = request;
   }
 
+  sendSms(mobile, code) {
+    return this.sendVcode(mobile, code);
+  }
+
   sendVcode(mobile, code) {
     if (!code || !mobile) {
       throw new InvalidArgumentException('Please specify params: mobile and msg!');
@@ -53,9 +57,9 @@ export default class Yuntongxin extends SmserAbstract {
   }
 
   send(api, payload) {
-    let baseUrl = 'https://app.cloopen.com:8883';
+    let baseUrl = 'https://app.cloopen.com';
     if (this.config.sandbox) {
-      baseUrl = 'https://sandboxapp.cloopen.com:8883';
+      baseUrl = 'https://sandboxapp.cloopen.com';
     }
 
     const batchId = moment().format('YYYYMMDDHHmmss');
