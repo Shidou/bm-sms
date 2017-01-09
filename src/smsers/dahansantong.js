@@ -23,9 +23,9 @@ export default class Dahansantong extends SmserAbstract {
 
   static getSmsResponse(res, msgid) {
     let status = 'failed';
-    if (res && res.msgid && res.result) {
+    if (res && res.msgid && typeof (res.result) !== 'undefined') {
       status = parseInt(res.result, 10) === STATUS_CODE.success ? 'success' : status;
-    } else if (res && res.result) {
+    } else if (res && typeof (res.result) !== 'undefined') {
       status = res.result === STATUS_CODE.code ? 'success' : status;
     }
     return new SmsResponse({
