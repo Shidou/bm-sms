@@ -57,9 +57,9 @@ export default class Yuntongxin extends SmserAbstract {
   }
 
   send(api, payload) {
-    let baseUrl = 'https://app.cloopen.com';
+    let baseUrl = 'https://app.cloopen.com:8883';
     if (this.config.sandbox) {
-      baseUrl = 'https://sandboxapp.cloopen.com';
+      baseUrl = 'https://sandboxapp.cloopen.com:8883';
     }
 
     const batchId = moment().format('YYYYMMDDHHmmss');
