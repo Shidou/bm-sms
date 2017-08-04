@@ -1,6 +1,6 @@
 {
   "name": "bm-sms",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "BMQB SMS package",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "bmqb",
     "bm-sms"
   ],
-  "author": "harveyz@bmqb.com",
+  "author": "xuqian@bmqb.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bmqb/bm-sms/issues"
