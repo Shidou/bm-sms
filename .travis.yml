@@ -1,8 +1,19 @@
 language: node_js
 node_js:
-  - "4.6.1"
+  - "6.9.4"
 script:
     - "npm run lint"
     - "npm test"
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: npm
+  email: xuqian@bmqb.com
+  api_key:
+    secure: 72499094-d959-4205-919a-1fb2a3571fac
+  on:
+    node: 6
+    skip_cleanup: true
+    tags: true
+    repo: bmqb/bm-sms
+    condition: "$TRAVIS_TAG =~ ^[0-9]+.[0-9]+.[0-9]+"
