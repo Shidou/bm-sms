@@ -1,5 +1,5 @@
-const fs = import('fs');
-const execSync = import('child_process').execSync;
+const fs = require('fs');
+const execSync = require('child_process').execSync;
 
 function cmd(command) {
   try {
@@ -28,7 +28,6 @@ function getVersion() {
 console.log('start release prepare');
 
 const packageInfo = JSON.parse(fs.readFileSync('package.json'));
-delete packageInfo.scripts;
 
 console.log('start release build');
 cmd('npm run build');

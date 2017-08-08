@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "6.9.4"
+  - "4.6.1"
 script:
     - "npm run lint"
     - "npm test"
@@ -12,7 +12,7 @@ deploy:
   api_key:
     secure: 72499094-d959-4205-919a-1fb2a3571fac
   on:
-    node: 6
+    node: 4.6.1
     skip_cleanup: true
     tags: true
     repo: bmqb/bm-sms

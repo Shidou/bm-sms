@@ -2,14 +2,7 @@
   "name": "bm-sms",
   "version": "0.2.10",
   "description": "BMQB SMS package",
-  "main": "index.js",
-  "scripts": {
-    "ava": "NODE_ENV=test node --harmony --harmony-proxies ./node_modules/.bin/ava --verbose",
-    "test": "./node_modules/.bin/nyc -a --reporter=lcov --reporter=text --reporter=html npm run ava",
-    "lint": "eslint src",
-    "build": "rm -rf ./lib && babel src --out-dir lib",
-    "prepublish": "node release.js"
-  },
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bmqb/bm-sms.git"
