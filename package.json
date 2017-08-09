@@ -7,7 +7,7 @@
     "ava": "NODE_ENV=test node --harmony --harmony-proxies ./node_modules/.bin/ava --verbose",
     "test": "./node_modules/.bin/nyc -a --reporter=lcov --reporter=text --reporter=html npm run ava",
     "lint": "eslint src",
-    "build": "rm -rf ./lib && babel src --out-dir lib",
+    "build": "rm -rf ./lib && ./node_modules/.bin/babel src --out-dir lib",
     "prepublish": "npm run build"
   },
   "repository": {

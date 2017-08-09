@@ -4,15 +4,11 @@ node_js:
 script:
   - "npm run lint"
   - "npm test"
-before deploy:
-  - "npm install babel-cli"
-  - "npm install babel-core"
-  - "npm install babel"
 deploy:
   provider: npm
   email: xuqian@bmqb.com
   api_key:
-    secure: 72499094-d959-4205-919a-1fb2a3571fac
+    secure: IHOTTk+WZdWHFDwVB3LpN/nYw/je6p0vRlX6WO8O+AKXwbq2eSQhnu29NoMSnCiTFfxXfue6Bn0QT6pj1csF6PR0aOyEQOejMpeRPkrfbZjXxPDdikZokrQt3ARg5oTSs3liyDvUtQxlHqfg18BThhG5Ew+l6b4mZLmd1FKbPZwA4HqNiWVsqXW0TLpR7qQiulyY7Vrk3gHOclz+jr2Up/c82eS/2EXlVZlJZQJscFhpi8qULALyBcK9fkOpKYE/UoNIaj6Xr7c8uaMLfRKtjqoamdn1mOnG/7oZ5aT/pAqYTdA9qSkXCibZOWbK9/INAWD+GH/eQh/0ZyFIRJPRzuS7/Fvbkmv8xQLriLoGSmkspybtpShtUN9MddYqQ8gwhLf50pnmCljwnlBzJ3Y2ItHN8HE8KM8dfGFSrRjBLcDaGlhnjyZN6SSLVFMQeaksHbCiVv7y6Z1l4sFXE8/AKJQP6iqQks/lG8s9vWBVwRmymIEw8F8IGvjdcBnKu4Jlp6xQEkGEdUnVU8bQEz2xktQSlnDuL458VXuIhrBJFVqhxQlRGrhJxYn5CI4hasBXfOBmfQAnmPohCisChI8kKpO7ONVTkBSCi7b1prPjp4MNRPU1JqMLgwzVnihwzNN6BHV+FHJdgMQ52AbVch5WZUHZTbm40A4mBke8Hc5gKJ0=
   on:
     node: 4.6.1
     skip_cleanup: true
