@@ -5,7 +5,9 @@ script:
     - "npm run lint"
     - "npm test"
 before_deploy:
-  - "apt-get install npm nvm"
+  - "npm install babel-cli"
+  - "npm install babel-core"
+  - "npm install babel"
 deploy:
   provider: npm
   email: xuqian@bmqb.com
