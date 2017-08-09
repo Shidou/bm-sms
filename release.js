@@ -3,7 +3,7 @@ const execSync = require('child_process').execSync;
 
 function cmd(command) {
   try {
-    const result = execSync(command);
+    var result = execSync(command);
     return result.toString()
   } catch (error) {
     throw(error);
@@ -12,7 +12,7 @@ function cmd(command) {
 
 function getVersion() {
   try {
-    let tag = cmd('git describe --exact-match --tags $(git rev-parse HEAD)');
+    var tag = cmd('git describe --exact-match --tags $(git rev-parse HEAD)');
     console.log('tag');
     console.log(tag);
     tag = tag.replace(/\r?\n|\r/g, '');
@@ -27,14 +27,14 @@ function getVersion() {
 
 console.log('start release prepare');
 
-const packageInfo = JSON.parse(fs.readFileSync('package.json'));
+var packageInfo = JSON.parse(fs.readFileSync('package.json'));
 
 console.log('start release build');
 cmd('npm run build');
 
 packageInfo.main = 'lib/index.js';
 
-const version = getVersion();
+var version = getVersion();
 
 if (version) {
   console.log('update release version');
