@@ -10,7 +10,7 @@ deploy:
   api_key:
     secure: 72499094-d959-4205-919a-1fb2a3571fac
   on:
-    node: 4.6.1
+    node: 6
     skip_cleanup: true
     tags: true
     repo: bmqb/bm-sms

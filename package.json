@@ -8,7 +8,7 @@
     "test": "./node_modules/.bin/nyc -a --reporter=lcov --reporter=text --reporter=html npm run ava",
     "lint": "eslint src",
     "build": "rm -rf ./lib && babel src --out-dir lib",
-    "prepublish": "./node_modules/.bin/babel-node release.js"
+    "prepublish": "node release.js"
   },
   "repository": {
     "type": "git",
