@@ -28,7 +28,6 @@ function getVersion() {
 console.log('start release prepare');
 
 var packageInfo = JSON.parse(fs.readFileSync('package.json'));
-cmd('npm install');
 console.log('start release build');
 cmd('npm run build');
 
