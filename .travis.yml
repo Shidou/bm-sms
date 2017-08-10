@@ -2,8 +2,10 @@ language: node_js
 node_js:
   - "4.6.1"
 script:
+  - "npm install"
   - "npm run lint"
   - "npm test"
+  - "npm run build"
 deploy:
   provider: npm
   email: xuqian@bmqb.com
